@@ -8,19 +8,20 @@ namespace LexicalAnalyzer
     {
         public string Text { get; set; }
         public int State { get; set; }
-        List<List<int>> rules = new List<List<int>>();
+        List<List<int>> Rules = new List<List<int>>();
+        public string result { get; set; }
 
         public Analyze(string text)
         {
             Text = text;
             State = 1;
+            result = "";
         }
 
         public string GetResult()
         {
             loadTransitionTable();
             int txtIndex = 0;
-            string result = "";
             string currentToken = "";
             char currentChar = Text[txtIndex];
 
@@ -78,7 +79,27 @@ namespace LexicalAnalyzer
                     case 10:
                         State = 1;
                         currentToken = "";
-                        result += "<STR>\n";
+                        result += "<STR>";
+                        break;
+                    case 11:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        txtIndex++;
+                        break;
+                    case 12:
+                        State = 1;
+                        currentToken = "";
+                        result += "<FLOAT>";
+                        break;
+                    case 13:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        txtIndex++;
+                        break;
+                    case 14:
+                        State = 1;
+                        currentToken = "";
+                        result += "<INTEGER>";
                         break;
                 }
             }
@@ -88,7 +109,7 @@ namespace LexicalAnalyzer
 
         private int getNextState(int currentState, char currentChar)
         {
-            return rules[currentState - 1][getCharIndex(currentChar)];
+            return Rules[currentState - 1][getCharIndex(currentChar)];
         }
 
         private void loadTransitionTable()
@@ -104,7 +125,7 @@ namespace LexicalAnalyzer
                     temp.Add(Convert.ToInt32(itm));
                 }
 
-                rules.Add(temp);
+                Rules.Add(temp);
             }
         }
 
@@ -145,6 +166,7 @@ namespace LexicalAnalyzer
                 case '*':
                     return 15;
                 case '\n':
+                    result += "\n";
                     return 16;
                 default:
                     return 0;
