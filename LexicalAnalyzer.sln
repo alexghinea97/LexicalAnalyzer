@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexicalAnalyzer", "LexicalAnalyzer\LexicalAnalyzer.csproj", "{C829BBAC-C527-44A9-8FD2-58A96A112CFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C829BBAC-C527-44A9-8FD2-58A96A112CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C829BBAC-C527-44A9-8FD2-58A96A112CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C829BBAC-C527-44A9-8FD2-58A96A112CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C829BBAC-C527-44A9-8FD2-58A96A112CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

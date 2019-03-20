@@ -1,0 +1,11 @@
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/bin/Debug/netcoreapp2.1/LexicalAnalyzer.deps.json
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/bin/Debug/netcoreapp2.1/LexicalAnalyzer.runtimeconfig.json
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/bin/Debug/netcoreapp2.1/LexicalAnalyzer.runtimeconfig.dev.json
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/bin/Debug/netcoreapp2.1/LexicalAnalyzer.dll
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/bin/Debug/netcoreapp2.1/LexicalAnalyzer.pdb
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.csprojAssemblyReference.cache
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.csproj.CoreCompileInputs.cache
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.AssemblyInfoInputs.cache
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.AssemblyInfo.cs
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.dll
+/Users/alexghinea/Facultate/Anul 3/Semestrul 2/TehCompilare/Laborator/LexicalAnalyzer/LexicalAnalyzer/obj/Debug/netcoreapp2.1/LexicalAnalyzer.pdb
