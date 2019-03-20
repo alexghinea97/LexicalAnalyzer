@@ -22,37 +22,45 @@ namespace LexicalAnalyzer
             int txtIndex = 0;
             string result = "";
             string currentToken = "";
+            char currentChar = Text[txtIndex];
 
-            while (txtIndex < Text.Length)
+            while (txtIndex <= Text.Length)
             {
-                char currentChar = Text[txtIndex];
+                if(txtIndex < Text.Length)
+                    currentChar = Text[txtIndex];
 
                 switch (State)
                 {
                     case 1:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        txtIndex++;
                         break;
                     case 2:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        txtIndex++;
                         break;
                     case 3:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        txtIndex++;
                         break;
                     case 4:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        txtIndex++;
                         break;
                     case 5:
                         State = 1;
                         result += currentToken;
                         currentToken = "";
+                        txtIndex++;
                         break;
                     case 6:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        txtIndex++;
                         break;
                     case 7:
                         State = 1;
@@ -62,9 +70,17 @@ namespace LexicalAnalyzer
                         State = 1;
                         currentToken = "";
                         break;
+                    case 9:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        txtIndex++;
+                        break;
+                    case 10:
+                        State = 1;
+                        currentToken = "";
+                        result += "<STR>\n";
+                        break;
                 }
-
-                txtIndex++;
             }
 
             return result;
