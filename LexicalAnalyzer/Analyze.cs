@@ -16,11 +16,11 @@ namespace LexicalAnalyzer
             Text = text += '\n';
             State = 1;
             Result = "";
+            loadTransitionTable();
         }
 
         public string GetResult()
         {
-            loadTransitionTable();
             int txtIndex = 0;
             string currentToken = "";
             char currentChar = Text[txtIndex];
@@ -106,6 +106,55 @@ namespace LexicalAnalyzer
                         currentToken = "";
                         Result += "<OPR>";
                         break;
+                    case 16:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '=')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
+                        break;
+                    case 17:
+                    case 18:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
+                        break;
+                    case 19:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '<')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
+                        break;
+                    case 20:
+                    case 21:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
+                        break;
+                    case 22:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '>')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
+                        break;
+                    case 23:
+                    case 24:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
+                        break;
+                        
                 }
             }
 
