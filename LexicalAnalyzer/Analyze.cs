@@ -33,26 +33,8 @@ namespace LexicalAnalyzer
                 switch (State)
                 {
                     case 1:
-                        currentToken += currentChar;
-                        State = getNextState(State, currentChar);
-                        if (currentChar == '\n')
-                            Result += '\n';
-                        txtIndex++;
-                        break;
                     case 2:
-                        currentToken += currentChar;
-                        State = getNextState(State, currentChar);
-                        if (currentChar == '\n')
-                            Result += '\n';
-                        txtIndex++;
-                        break;
                     case 3:
-                        currentToken += currentChar;
-                        State = getNextState(State, currentChar);
-                        if (currentChar == '\n')
-                            Result += '\n';
-                        txtIndex++;
-                        break;
                     case 4:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
@@ -76,9 +58,6 @@ namespace LexicalAnalyzer
                         txtIndex++;
                         break;
                     case 7:
-                        State = 1;
-                        currentToken = "";
-                        break;
                     case 8:
                         State = 1;
                         currentToken = "";
