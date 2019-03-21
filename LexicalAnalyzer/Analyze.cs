@@ -9,13 +9,13 @@ namespace LexicalAnalyzer
         public string Text { get; set; }
         public int State { get; set; }
         List<List<int>> Rules = new List<List<int>>();
-        public string result { get; set; }
+        public string Result { get; set; }
 
         public Analyze(string text)
         {
-            Text = text;
+            Text = text += '\n';
             State = 1;
-            result = "";
+            Result = "";
         }
 
         public string GetResult()
@@ -27,7 +27,7 @@ namespace LexicalAnalyzer
 
             while (txtIndex <= Text.Length)
             {
-                if(txtIndex < Text.Length)
+                if (txtIndex < Text.Length)
                     currentChar = Text[txtIndex];
 
                 switch (State)
@@ -35,32 +35,44 @@ namespace LexicalAnalyzer
                     case 1:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 2:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 3:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 4:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 5:
                         State = 1;
-                        result += currentToken;
+                        Result += currentToken;
                         currentToken = "";
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 6:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 7:
@@ -74,37 +86,51 @@ namespace LexicalAnalyzer
                     case 9:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 10:
                         State = 1;
                         currentToken = "";
-                        result += "<STR>";
+                        Result += "<STR>";
                         break;
                     case 11:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
                         txtIndex++;
                         break;
                     case 12:
                         State = 1;
                         currentToken = "";
-                        result += "<FLOAT>";
+                        Result += "<FLOAT>";
                         break;
                     case 13:
                         currentToken += currentChar;
                         State = getNextState(State, currentChar);
-                        txtIndex++;
+                        if (char.IsDigit(currentChar) || currentChar == '.')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
                         break;
                     case 14:
                         State = 1;
                         currentToken = "";
-                        result += "<INTEGER>";
+                        Result += "<INTEGER>";
+                        break;
+                    case 15:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
                         break;
                 }
             }
 
-            return result;
+            return Result;
         }
 
         private int getNextState(int currentState, char currentChar)
@@ -166,7 +192,6 @@ namespace LexicalAnalyzer
                 case '*':
                     return 15;
                 case '\n':
-                    result += "\n";
                     return 16;
                 default:
                     return 0;
