@@ -33,6 +33,21 @@ namespace LexicalAnalyzer
                 switch (State)
                 {
                     case 1:
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '\n')
+                            Result += '\n';
+                        if(State == 33)
+                        {
+                            Result += currentToken;
+                            currentToken = "";
+                            currentToken += currentChar;
+                        }
+                        else
+                        {
+                            Result += currentChar;
+                        }
+                        txtIndex++;
+                        break;
                     case 2:
                     case 3:
                     case 4:
@@ -46,9 +61,6 @@ namespace LexicalAnalyzer
                         State = 1;
                         Result += currentToken;
                         currentToken = "";
-                        if (currentChar == '\n')
-                            Result += '\n';
-                        txtIndex++;
                         break;
                     case 6:
                         currentToken += currentChar;
@@ -154,7 +166,64 @@ namespace LexicalAnalyzer
                         currentToken = "";
                         Result += "<OPR>";
                         break;
-                        
+                    case 25:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '+' || currentChar == '=')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
+                        break;
+                    case 26:
+                    case 27:
+                    case 28:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
+                        break;
+                    case 29:
+                        currentToken += currentChar;
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '-' || currentChar == '=')
+                        {
+                            if (currentChar == '\n')
+                                Result += '\n';
+                            txtIndex++;
+                        }
+                        break;
+                    case 30:
+                    case 31:
+                    case 32:
+                        State = 1;
+                        currentToken = "";
+                        Result += "<OPR>";
+                        break;
+                    case 33:
+
+                        State = getNextState(State, currentChar);
+                        if (currentChar == '_' || char.IsDigit(currentChar) || char.IsLetter(currentChar)
+                            || currentChar == '\n' || currentChar == ' ')
+                        {
+                            currentToken += currentChar;
+                            if (currentChar == '\n')
+                                Result += '\n';
+
+                            if (currentChar == ' ')
+                                Result += ' ';
+
+                            txtIndex++;
+                        }
+                        break;
+                    case 34:
+                        if (Keywords.isKeyword(currentToken))
+                            Result += currentToken;
+                        else
+                            Result += "<ID>";
+                        State = 1;
+                        currentToken = "";
+                        break;
                 }
             }
 
@@ -227,3 +296,5 @@ namespace LexicalAnalyzer
         }
     }
 }
+
+
