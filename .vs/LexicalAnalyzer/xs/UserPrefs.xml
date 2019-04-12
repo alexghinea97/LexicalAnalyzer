@@ -1,22 +1,22 @@
-﻿<Properties StartupConfiguration="{C829BBAC-C527-44A9-8FD2-58A96A112CFE}|Default">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{C829BBAC-C527-44A9-8FD2-58A96A112CFE}|Default">
   <MonoDevelop.Ide.ItemProperties.LexicalAnalyzer PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LexicalAnalyzer/Analyze.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LexicalAnalyzer/date.in">
     <Files>
-      <File FileName="LexicalAnalyzer/Analyze.cs" Line="74" Column="10" />
-      <File FileName="LexicalAnalyzer/Program.cs" Line="12" Column="1" />
-      <File FileName="LexicalAnalyzer/transitions.txt" Line="1" Column="2" />
-      <File FileName="LexicalAnalyzer/date.in" Line="1" Column="1" />
-      <File FileName="LexicalAnalyzer/transitionsHelp.txt" Line="1" Column="1" />
-      <File FileName="LexicalAnalyzer/date.out" Line="1" Column="1" />
+      <File FileName="LexicalAnalyzer/Keywords.cs" Line="19" Column="1" />
+      <File FileName="LexicalAnalyzer/transitions.txt" Line="11" Column="51" />
+      <File FileName="LexicalAnalyzer/transitionsHelp.txt" Line="2" Column="1" />
+      <File FileName="LexicalAnalyzer/Analyze.cs" Line="188" Column="13" />
+      <File FileName="LexicalAnalyzer/Program.cs" Line="14" Column="78" />
       <File FileName="LexicalAnalyzer/FilePaths.cs" Line="1" Column="1" />
-      <File FileName="LexicalAnalyzer/Keywords.cs" Line="1" Column="1" />
+      <File FileName="LexicalAnalyzer/date.in" Line="1" Column="1" />
+      <File FileName="LexicalAnalyzer Status" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LexicalAnalyzer" expanded="True">
             <Node name="LexicalAnalyzer" expanded="True">
-              <Node name="Analyze.cs" selected="True" />
+              <Node name="date.in" selected="True" />
             </Node>
           </Node>
         </State>

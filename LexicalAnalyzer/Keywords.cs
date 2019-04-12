@@ -19,7 +19,8 @@ namespace LexicalAnalyzer
             if (sToken.Length > 16 || (sToken).Length == 0)
                 return false;
 
-            return sKeywords.Exists(element => (sToken.ToLower()) == element);
+            return sKeywords.Exists(element => (sToken.ToLower()).Remove(sToken.Length - 1) == element) ||
+                sKeywords.Exists(element => (sToken.ToLower()) == element);
         }
     }
 }
